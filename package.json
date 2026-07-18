@@ -9,7 +9,7 @@
     "dev": "node build.mjs --watch"
   },
   "dependencies": {
-    "llm-token-count": "file:../llm-token-count"
+    "tokenizer-core": "file:../tokenizer-core"
   },
   "devDependencies": {
     "obsidian": "*",
