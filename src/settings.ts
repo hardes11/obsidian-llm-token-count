@@ -1,0 +1,63 @@
+import { App, FileSystemAdapter, Notice, PluginSettingTab, Setting } from "obsidian";
+import { listSupportedModels } from "@hardes11/tokenizers-core";
+import type TokenCountPlugin from "./main";
+
+export class TokenCountSettingsTab extends PluginSettingTab {
+  plugin: TokenCountPlugin;
+
+  constructor(app: App, plugin: TokenCountPlugin) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
+
+  display(): void {
+    const { containerEl } = this;
+    containerEl.empty();
+
+    const models = listSupportedModels();
+
+    new Setting(containerEl)
+      .setName("Default model")
+      .setDesc("Tokenizer used for the status-bar count.")
+      .addDropdown((dd) => {
+        dd.addOptions(Object.fromEntries(models.map((m) => [m, m])));
+        dd.setValue(this.plugin.settings.defaultModel);
+        dd.onChange(async (v) => {
+          this.plugin.settings.defaultModel = v;
+          await this.plugin.saveSettings();
+          // Triggers an updateStatusBar; the incrementing requestId inside it
+          // cancels any in-flight count under the previous model.
+          await this.plugin.updateStatusBar();
+        });
+      });
+
+    new Setting(containerEl)
+      .setName("Re-download tokenizer")
+      .setDesc(
+        "Clears the cached tokenizer for the current model; re-fetches on next count. Use after a tokenizer version bump.",
+      )
+      .addButton((btn) => {
+        btn.setButtonText("Re-download")
+          .setCta()
+          .onClick(async () => {
+            const model = this.plugin.settings.defaultModel;
+            const adapter = this.app.vault.adapter;
+            const base = adapter instanceof FileSystemAdapter
+              ? adapter.getBasePath()
+              : "";
+            const dir = `${base}/.obsidian/plugins/obsidian-llm-token-count/tokenizers`;
+            const tokPath = `${dir}/${model}.json`;
+            const cfgPath = `${dir}/${model}.config.json`;
+            try {
+              const { existsSync, unlinkSync } = await import("node:fs");
+              if (existsSync(tokPath)) unlinkSync(tokPath);
+              if (existsSync(cfgPath)) unlinkSync(cfgPath);
+              new Notice(`Tokenizer cache cleared for ${model}; re-fetching…`);
+              await this.plugin.updateStatusBar();
+            } catch (e) {
+              new Notice(`Re-download failed: ${(e as Error).message}`);
+            }
+          });
+      });
+  }
+}

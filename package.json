@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-llm-token-count",
+  "version": "1.0.0",
+  "description": "Accurate LLM token counts in the Obsidian status bar",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch"
+  },
+  "dependencies": {
+    "@hardes11/tokenizers-core": "file:../tokenizers-core"
+  },
+  "devDependencies": {
+    "obsidian": "*",
+    "esbuild": "*",
+    "typescript": "*",
+    "@types/node": "*"
+  }
+}
