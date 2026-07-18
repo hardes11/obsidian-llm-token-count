@@ -1,6 +1,6 @@
 {
   "id": "obsidian-llm-token-count",
-  "name": "LLM Token Count",
+  "name": "Obsidian LLM Token Count",
   "version": "1.0.0",
   "minAppVersion": "1.4.0",
   "description": "Accurate LLM token counts in the status bar — GLM-5.2/GPT/Qwen/DeepSeek exact, Claude/Gemini approx.",
