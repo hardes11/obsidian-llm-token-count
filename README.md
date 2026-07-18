@@ -73,7 +73,7 @@ Variants: `loading · <model>…` (model switch mid-load), `… tokens · <model
 
 ## Implementation notes
 
-- Tokenization core: [`@hardes11/tokenizers-core`](https://github.com/hardes11/tokenizers-core) — framework-agnostic, npm-published, usable outside Obsidian.
+- Tokenization core: [`llm-token-count`](https://github.com/hardes11/llm-token-count) — framework-agnostic, npm-published, usable outside Obsidian.
 - Build: esbuild bundles the core + `@huggingface/tokenizers` + `js-tiktoken` into a single `main.js` (~5.5 MB; the 20 MB GLM `tokenizer.json` is fetched at runtime, not bundled).
 - `manifest.json`: `id: obsidian-llm-token-count`, `isDesktopOnly: true`, `minAppVersion: 1.4.0`.
 
@@ -84,7 +84,7 @@ npm run build   # → main.js
 
 ## Related
 
-- [`@hardes11/tokenizers-core`](https://github.com/hardes11/tokenizers-core) — the framework-agnostic tokenization engine this plugin uses. Usable from any Node script or bundler.
+- [`llm-token-count`](https://github.com/hardes11/llm-token-count) — the framework-agnostic tokenization engine this plugin uses. Usable from any Node script or bundler.
 - [`hardes11/obsidian-opencode-mcp-plugin`](https://github.com/hardes11/obsidian-opencode-mcp-plugin) — adds a `vault_count_tokens` MCP tool so AI agents can self-check a note's token count before sending it to a model. Includes auto-sync from the active model and suppresses its own status-bar item when this standalone is installed.
 
 ## License

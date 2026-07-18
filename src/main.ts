@@ -1,5 +1,5 @@
 import { FileSystemAdapter, Plugin, TFile } from "obsidian";
-import { countTokens, listSupportedModels } from "@hardes11/tokenizers-core";
+import { countTokens, listSupportedModels } from "llm-token-count";
 import { TokenCountSettingsTab } from "./settings";
 
 interface TokenCountSettings {

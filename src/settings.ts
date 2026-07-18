@@ -1,5 +1,5 @@
 import { App, FileSystemAdapter, Notice, PluginSettingTab, Setting } from "obsidian";
-import { clearTokenizerCache, listSupportedModels } from "@hardes11/tokenizers-core";
+import { clearTokenizerCache, listSupportedModels } from "llm-token-count";
 import type TokenCountPlugin from "./main";
 
 export class TokenCountSettingsTab extends PluginSettingTab {
