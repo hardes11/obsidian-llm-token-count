@@ -4,7 +4,7 @@
 
 ![Obsidian Plugin](https://img.shields.io/badge/Obsidian-Plugin-7C3AED.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Desktop only](https://img.shields.io/badge/Platform-Desktop%20only-6E7681.svg)
 
-![Status bar showing the token count next to Obsidian's default word/character count](https://cdn.jsdelivr.net/gh/hardes11/obsidian-llm-token-count@main/assets/status-bar.png)
+![Status bar — the highlighted portion (10,485 tokens · glm-5.2 (exact)) is added by the plugin, alongside Obsidian's built-in word/character counts](https://cdn.jsdelivr.net/gh/hardes11/obsidian-llm-token-count@main/assets/status-bar-annotated.png)
 
 The token count (`10,485 tokens · glm-5.2 (exact)`) appears in the status bar alongside Obsidian's built-in word and character counts — live, for whatever note you have open.
 
