@@ -4,7 +4,7 @@
 
 ![Obsidian Plugin](https://img.shields.io/badge/Obsidian-Plugin-7C3AED.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Desktop only](https://img.shields.io/badge/Platform-Desktop%20only-6E7681.svg)
 
-![Status bar — the highlighted portion (10,485 tokens · glm-5.2 (exact)) is added by the plugin, alongside Obsidian's built-in word/character counts](https://cdn.jsdelivr.net/gh/hardes11/obsidian-llm-token-count@f6ee548/assets/status-bar-annotated.png)
+![Status bar — the highlighted portion (10,485 tokens · glm-5.2 (exact)) is added by the plugin, alongside Obsidian's built-in word/character counts](https://cdn.jsdelivr.net/gh/hardes11/llm-token-count@f6ee548/assets/status-bar-annotated.png)
 
 The token count appears in the status bar alongside Obsidian's built-in word and character counts — live, for whatever note you have open.
 
@@ -17,7 +17,7 @@ The token count appears in the status bar alongside Obsidian's built-in word and
 
 ## Installation
 
-1. Download [`main.js`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/main.js), [`manifest.json`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/manifest.json), and [`styles.css`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/styles.css).
+1. Download [`main.js`](https://raw.githubusercontent.com/hardes11/llm-token-count/main/main.js), [`manifest.json`](https://raw.githubusercontent.com/hardes11/llm-token-count/main/manifest.json), and [`styles.css`](https://raw.githubusercontent.com/hardes11/llm-token-count/main/styles.css).
 2. Place them in your vault at `.obsidian/plugins/llm-token-count/`.
 3. In Obsidian: **Settings → Community plugins**, reload the plugin list, enable **LLM Token Count**.
 
