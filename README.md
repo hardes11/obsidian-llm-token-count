@@ -1,4 +1,4 @@
-# Obsidian LLM Token Count
+# LLM Token Count
 
 **Real LLM token counts for GLM, GPT, Qwen & DeepSeek in Obsidian's status bar — so you know if a note fits the context budget before you send it.**
 
