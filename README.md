@@ -18,8 +18,8 @@ The token count appears in the status bar alongside Obsidian's built-in word and
 ## Installation
 
 1. Download [`main.js`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/main.js), [`manifest.json`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/manifest.json), and [`styles.css`](https://raw.githubusercontent.com/hardes11/obsidian-llm-token-count/main/styles.css).
-2. Place them in your vault at `.obsidian/plugins/obsidian-llm-token-count/`.
-3. In Obsidian: **Settings → Community plugins**, reload the plugin list, enable **Obsidian LLM Token Count**.
+2. Place them in your vault at `.obsidian/plugins/llm-token-count/`.
+3. In Obsidian: **Settings → Community plugins**, reload the plugin list, enable **LLM Token Count**.
 
 On first use with a HuggingFace-sourced model (GLM, Qwen, DeepSeek), the plugin fetches the tokenizer and caches it locally. The first count takes a few seconds; every count after is instant.
 
